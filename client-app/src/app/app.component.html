@@ -1,0 +1,65 @@
+<style>
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+
+  .flex-item {
+    height: 500px;
+    margin: 3px;
+  }
+
+    .flex-item ul {
+      list-style: none;
+    }
+
+    .flex-item li {
+      background-color: black;
+      color: white;
+      margin: 3px;
+      padding:3px;
+    }
+</style>
+<div>
+    <label>Tu nombre Random es:{{name}}</label>
+  </div>
+<div class="flex-container">
+
+  <div>
+    X:
+    <input type="number" id="equis" name="equis"  [(ngModel)]="currentX">
+  </div>
+  <div>
+    Y:
+    <input  [(ngModel)]="currentY" type="number" id="ye" name="ye" >
+  </div>
+  <div>
+    Ancho:
+    <input type="number" id="he=" name="he"  [(ngModel)]="currentHe">
+  </div>
+  <div>
+    Alto:
+    <input type="number" id="we=" name="we"  [(ngModel)]="currentWe">
+  </div>
+  <div>
+    Accion:
+    <select [(ngModel)]="currentAccion">
+      <option *ngFor="let acc of accion" [value]="acc">{{acc}}</option>
+    </select>
+  </div>
+  <div>
+    <button type="button" class="btn btn-primary ok" (click)="Click()">Mostrar</button>
+  </div>
+
+
+  <div class="flex-item">
+    <ul>
+      <li *ngFor="let message of messages">{{message}}</li>
+    </ul>
+  </div>
+</div>
