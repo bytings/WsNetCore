@@ -8,3 +8,12 @@ Implementation of websockets - NetCore + Angular
 de browser igual a la anterior mencionada.
 
 -Al utilizar cualquiera de las 2 en la otra se vera reflejado un texto de lo que se ejecutó y la ventana del notepad ira cambiando de tamaño segun lo que se modifique.
+
+**#Front en Angular**
+
+-Abrir la carpeta Client-App, se requiere instalar Node modules con **npm install**
+Ejecutar Ng serve y navegar a http://localhost:4200/
+
+**#BackEnd VisualStudio**
+
+Si el proyecto no corre, verificar que se encuentre instalado Node Modules en el front y que se este ejecutando en **WebSocketAndNetCore.WEB** al momento de presionar el boton "Play" (que por defecto casi siempre este en "IIS").
