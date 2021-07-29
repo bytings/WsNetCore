@@ -10,8 +10,8 @@
   }
 
   .flex-item {
-    height: 500px;
-    margin: 3px;
+    height: 200px;
+    margin: 0px;
   }
 
     .flex-item ul {
@@ -21,8 +21,8 @@
     .flex-item li {
       background-color: black;
       color: white;
-      margin: 3px;
-      padding:3px;
+      margin: 0px;
+      padding:0px;
     }
 </style>
 <div>
@@ -32,19 +32,19 @@
 
   <div>
     X:
-    <input type="number" id="equis" name="equis"  [(ngModel)]="currentX">
+    <input type="number" id="equis" name="equis"  [(ngModel)]="currentX" disabled>
   </div>
   <div>
     Y:
-    <input  [(ngModel)]="currentY" type="number" id="ye" name="ye" >
+    <input  [(ngModel)]="currentY" type="number" id="ye" name="ye" disabled >
   </div>
   <div>
     Ancho:
-    <input type="number" id="he=" name="he"  [(ngModel)]="currentHe">
+    <input type="number" id="he=" name="he"  [(ngModel)]="currentWe">
   </div>
   <div>
     Alto:
-    <input type="number" id="we=" name="we"  [(ngModel)]="currentWe">
+    <input type="number" id="we=" name="we"  [(ngModel)]="currentHe">
   </div>
   <div>
     Accion:
@@ -62,4 +62,9 @@
       <li *ngFor="let message of messages">{{message}}</li>
     </ul>
   </div>
+</div >
+<div  class="example-box" id="sq" [ngStyle]="{width:currentWe+'px',height:currentHe+'px'}" cdkDrag (cdkDragMoved)="onDragMove($event)">
+  Arrastrame a donde quieras :)
 </div>
+
+

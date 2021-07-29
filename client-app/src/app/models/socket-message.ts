@@ -1,4 +1,8 @@
 export class SocketMessage {
   MessageType: string;
-  Payload: any
+  Payload: any;
+  X:number;
+  Y:number;
+  He: number;
+  Wi:number;
 }

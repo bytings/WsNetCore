@@ -9,7 +9,7 @@ import { SquareChangeRequest } from './models/square-change-request';
 })
 export class WebSocketService {
   private socket: WebSocket;
-  announcement$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  announcement$: BehaviorSubject<[string, number?,number?,number?,number?]> = new BehaviorSubject<[string, number?,number?,number?,number?]>(['',0,0,0,0]);
   name$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private name: string;
   constructor() { }
@@ -28,7 +28,8 @@ export class WebSocketService {
           this.name$.next(this.name);
           break;
         case "announce":
-          this.announcement$.next(messageBox.Payload);
+          this.announcement$.next([messageBox.Payload,messageBox.X,messageBox.Y,messageBox.He,messageBox.Wi]);
+
           break;
         default:
           break;

@@ -104,7 +104,7 @@ namespace WebSocketAndNetCore.Web
         private async Task AnnounceChange(ChangeRequest request)
         {
             var comp = string.Empty;
-            comp = $"{request.Name} modifico X:{request.X}; Y:{request.Y}; Ancho:{request.Height}; alto:{request.Width}";
+            comp = "no";
             if (request.Close==true)
             {
                 comp = $"{request.Name} detuvo la aplicacion";
@@ -112,7 +112,11 @@ namespace WebSocketAndNetCore.Web
             var message = new SocketMessage<string>
             {
                 MessageType = "announce",
-                Payload = comp
+                Payload = comp,
+                X = request.X,
+                Y = request.Y,
+                He = request.Height,
+                Wi = request.Width
             };
             await SendAll(message.ToJson());
         }
